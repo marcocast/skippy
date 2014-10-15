@@ -7,7 +7,7 @@ class Main
   def start
 
     die = Die.new
-    kangaroo = Kangaroo.new(Grid.new(3), die)
+    kangaroo = Kangaroo.new(Grid.new(2), die)
 
 
     while kangaroo.at_home == false

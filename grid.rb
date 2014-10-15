@@ -13,7 +13,7 @@ class Grid
 
   def lies_outside(point)
 
-    point.x <= @homePoint.x || point.y <= @homePoint.y
+    point.x < 0 || point.y < 0 || point.x > @homePoint.x || point.y > @homePoint.y
 
   end
 
