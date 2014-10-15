@@ -1,38 +1,28 @@
 class Die
 
-  def initialize(lname, fname)
-    @lname = lname
-    @fname = fname
-    @cardinalities = ["North", "South", "East", "west"]
+  def initialize()
+    @cardinalities = ["North", "South", "East", "West"]
+    @cardinalitiesStas = Hash["North" => 0, "South" => 0, "East" => 0, "West" => 0]
   end
-
-  attr_reader :lname, :fname
-  attr_writer :lname, :fname
 
   def throw
 
-    return @cardinalities[rand(0..3)]
+    @cardinalityToReturn = @cardinalities[rand(0..3)]
+
+    @cardinalitiesStas[@cardinalityToReturn] = @cardinalitiesStas[@cardinalityToReturn] + 1
+
+    return @cardinalityToReturn
 
   end
 
 
-  def 
+  def stats
+
+    return @cardinalitiesStas
+
+  end
 
 end
-
-
-
-die =  Die.new("marco", "cast")
-
-
-puts die.lname
-
-
-puts die.throw
-
-
-
-
 
 
 
