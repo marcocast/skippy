@@ -4,10 +4,15 @@ require './grid'
 
 class Main
 
+  def initialize(gridSize)
+
+    @gridSize = gridSize
+  end
+
   def start
 
     die = Die.new
-    kangaroo = Kangaroo.new(Grid.new(55), die)
+    kangaroo = Kangaroo.new(Grid.new(@gridSize), die)
 
 
     while kangaroo.at_home == false
@@ -24,4 +29,4 @@ end
 
 
 
-Main.new.start
+Main.new(55).start
